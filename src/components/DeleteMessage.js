@@ -1,19 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
-//import { NavLink } from "react-router-dom";
-//import handleFetch from "./handleFetch";
+
 
 const DeleteRecord = () => {
   const [id, setId] = useState(0);
   console.log(id)
   const handleChange = (event) => {
-    //console.log(event.target.value)
     setId(event.target.value);
   };
-  //console.log("if",id);
   const handleDelete = () => {
     axios.delete(`http://localhost:3000/users/${id}`).then(() => {
-      //handleFetch()
       console.log("deleted");
       alert("deleted");
     });
@@ -28,10 +24,8 @@ const DeleteRecord = () => {
           placeholder="Type Id to delete"
           onChange={handleChange}
         ></input>
-        {/* <button onClick={handleDelete}>Delete record</button> */}
-        {/* <NavLink exact to="/"> */}
+      
           <button  type="button" onClick={handleDelete}>Delete record</button>
-        {/* </NavLink> */}
       </div>
     </div>
   );
