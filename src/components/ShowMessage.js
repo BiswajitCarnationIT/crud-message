@@ -37,7 +37,6 @@ const ShowMessage = (props) => {
     return (
         <div>
             <h3>List of tasks </h3>
-            {/* <button onClick={fetchData}>See list</button> */}
         <table id="customers">
           <tr>
             <th>id</th>
@@ -52,17 +51,7 @@ const ShowMessage = (props) => {
               {user.title ? <td>{user.title}</td> : <td>--</td>}
               {user.message ? <td>{user.message}</td> : <td>--</td>}
               {user.status ? <td>{user.status}</td> : <td>--</td>}
-              {/* {user.address ? <td>{user.address}</td> : <td>--</td>}
-              {
-                <td>
-                  <button onClick={() => handleDelete(user.id)}>Delete</button>
-                </td>
-              }
-              {
-                <td>
-                  <button onClick={() => handleUpdate(user)}>Update</button>
-                </td>
-              } */}
+              
             </tr>
           )):null}
         </table>

@@ -12,9 +12,7 @@ const AddMessage = () => {
     const [message, setMessage] = useState("");
     const [status, setStatus] = useState("");
     const dispatch = useDispatch()
-    //console.log(title,message,status)
     const handleSubmit = () => {
-        //alert(props.fullName)
         const article = {
            title:title.title,
            message: message.message,
@@ -30,28 +28,22 @@ const AddMessage = () => {
           .catch((error) => {
             console.error("There was an error!", error);
           });
-        //this.history.push("/")  r-r-d
     
-        //*** */
         axios
           .get("http://localhost:3000/users")
           .then((response) => {
-            //data = response.data;
             console.log(response.data);
-            //props.handleFetchToRedux();
             dispatch(fetchList(response.data))
           })
           .catch((error) => {
             console.error("There was an error!", error);
           });
-        //history.push("/table");
       };
       const fetchData = () =>{
           axios
         .get(`http://localhost:3000/users`)
         .then((res) => {
           console.log(res.data);
-          //data = res.data;
           dispatch(fetchList(res.data))
           
         })
@@ -75,10 +67,7 @@ const AddMessage = () => {
                 setStatus({ [e.target.name]: e.target.value })
             }/>
             <br></br>
-            {/* <input type="radio" id="active" name="status" placeholder='status' value=""/>
-            <label for="active">Active</label><br></br>
-            <input type="radio" id="Inactive" name="status" placeholder='status' value=""/>
-            <label for="Inactive">Inactive</label><br></br> */}
+          
             <button type="button" onClick={handleSubmit} >Submit</button>
             <button onClick={fetchData}>Load Message list</button>
             
